@@ -1,2 +1,2 @@
-# textcheck
-Project to check text for legitimacy
+# textScamFlag
+Is my text a scam?
