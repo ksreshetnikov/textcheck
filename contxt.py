@@ -31,6 +31,22 @@ def check_spelling(text: str) -> dict:
     
     return results
 
+def search_http_in_file(file_path):
+    try:
+        with open(file_path, 'r') as file:
+            lines = file.readlines()
+            
+            print(f"Lines containing 'https' in {file_path}:")
+            for line_number, line in enumerate(lines, start=1):
+                if "https:" in line:
+                    print(f"Line with https safe link {line_number}: {line.strip()}")
+                elif "http:" in line:
+                    print(f"Line with http un-safe link {line_number}: {line.strip()}")
+    except FileNotFoundError:
+        print(f"Error: The file '{file_path}' was not found.")
+    except Exception as e:
+        print(f"An error occurred: {e}")
+
 def display_results(spelling_errors: dict):
     """Display spelling check results"""
     if not spelling_errors:
@@ -45,12 +61,15 @@ def display_results(spelling_errors: dict):
 
 def main():
     # File path to check (change this to your file path)
-    input_file = ".txt"
+    input_file = "MyText.txt"
     
     #check the text for spelling errors
-    print(f"Checking spelling in file: {input_file}")
+    print(f"Checking the SMS message for SCAM: {input_file}")
     text_data = load_text_file(input_file)
     spelling_errors = check_spelling(text_data)
+
+    #check the file for links and if it is https or http
+    has_link = search_http_in_file(input_file)
     display_results(spelling_errors)
 
     #check the file for the link and if it is https
