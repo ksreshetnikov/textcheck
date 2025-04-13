@@ -1,5 +1,5 @@
 import re
-#from spellchecker import SpellChecker
+from spellchecker import SpellChecker
 
 def load_text_file(file_path: str) -> str:
     """Load text data from a file"""
