@@ -67,12 +67,15 @@ def main():
     print(f"Checking the SMS message for SCAM: {input_file}")
     text_data = load_text_file(input_file)
     spelling_errors = check_spelling(text_data)
+    display_results(spelling_errors)
 
     #check the file for links and if it is https or http
     has_link = search_http_in_file(input_file)
-    display_results(spelling_errors)
+   
 
-    #check the file for the link and if it is https
+    #check if the text has your actual name in it
+
+    
 
 
 
