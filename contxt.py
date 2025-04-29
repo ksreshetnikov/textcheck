@@ -2,6 +2,8 @@ import re
 from spellchecker import SpellChecker
 #https://github.com/ksreshetnikov/textcheck
 
+#I was getting tired of the unpaid tolls texts. It would be awesome to have an app to check for legitimacy of the SMS notifications.
+#upload the text from the file, for now, and check for spams, scams e.t.c. 
 def load_text_file(file_path: str) -> str:
     """Load text data from a file"""
     try:
